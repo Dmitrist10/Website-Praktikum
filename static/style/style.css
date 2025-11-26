@@ -1,21 +1,25 @@
 /* Light Theme */
 :root {
     --text-primary: rgb(35, 40, 43);
-    --text-secondary: rgb(73, 80, 86);
+    --text-secondary: rgb(48, 52, 56);
 
-    --brand-color: rgb(197, 33, 33);
+    --text-primary-dark: rgb(35, 40, 43);
+    --text-secondary-dark: rgb(48, 52, 56);
+
+    --brand-color: rgb(210, 37, 37);
 
     --bg-light: rgb(245, 245, 245);
-    --bg-light-transparent-s: rgb(245, 245, 245, 0.75);
-    --bg-light-transparent-m: rgb(245, 245, 245, 0.5);
-    --bg-light-transparent-l: rgb(245, 245, 245, 0.25);
-
+    --bg-light-transparent: rgb(245, 245, 245, 0.25);
+    
     --bg-border: rgb(212, 218, 223);
+    
+    --btn-primary: rgb(33, 101, 197);
+    --btn-primary-dark: rgb(18, 20, 23);
 
     --bg-light-soft: rgb(200, 200, 215);
     --bg-light-transparent-s: rgb(210, 210, 225, 0.75);
     --bg-light-transparent-m: rgb(210, 210, 225, 0.5);
-    --bg-light-transparent-l: rgb(210, 210, 225, 0.25);
+    --bg-light-transparent-l: <rgb(210, 210, 225, 0.25);
 
     --global-header-min-height: 5vh;
 }
@@ -142,6 +146,12 @@ a {
     align-items: center;
 }
 
+#global-footer p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
 #global-footer-companyInfo {
     display: flex;
     flex-direction: column;
@@ -158,6 +168,11 @@ a {
     gap: 10px;
 }
 
+.Logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
 
 
 #global-footer nav {
@@ -182,7 +197,20 @@ a {
 
 
 
+.btn {
+    background-color: var(--bg-light);
+    border: 2px solid var(--bg-border);
+    color: var(--text-primary);
 
+    min-width: 400px;
+    min-height: 100px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-dark);
+    color: var(--text-secondary);
+}
 
 
 
@@ -197,7 +225,46 @@ a {
 
 
 
+.main-container {
+    min-height: 100vh;
+}
+
+.main-section {
+    min-height: 10vh;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
 
 .section-hero {
-    min-height: 65vh;
+    /* background-image: linear-gradient(to top right, rgb(196, 24, 148), rgb(24, 53, 196)); */
+    min-height: 25vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    padding-left: 50px;
+
+}
+
+#core-index-section-hero {
+    min-height: 95vh;
+    background-color: white;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
 }

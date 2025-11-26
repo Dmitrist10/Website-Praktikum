@@ -5,5 +5,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('voxelgames/', include('voxelgames.urls')),
+    path('voxelengine/', include('voxelengine.urls')),
     path('accounts/', include('accounts.urls')),
 ]

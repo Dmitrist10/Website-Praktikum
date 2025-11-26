@@ -19,12 +19,12 @@
             </h1>
         </div>
         <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">VoxelEngine</a>
-            <a href="#">VoxelGames</a>
+            <a href="{% url 'core:index' %}" class="active">Home</a>
+            <a href="{% url 'voxelengine:index' %}">VoxelEngine</a>
+            <a href="{% url 'voxelgames:index' %}">VoxelGames</a>
         </nav>
         <div id="global-header-right">
-            <a href="#">Login</a>
+            <a href="{% url 'account_login' %}">Login</a>
         </div>
     </header>
     <main id="global-main">
@@ -32,26 +32,26 @@
     </main>
 
     <footer id="global-footer">
-        <p>&copy; 2022 My Site. All rights reserved.</p>
+        <p>&copy; 2025 DarkSecretStudios. All rights reserved.</p>
         <div id="global-footer-companyInfo">
             <div id="company-logo">
-                <h1 class="Logo">
+                {% comment %} <h1 class="Logo">
                     DarkSecretStudios
-                </h1>
+                </h1> {% endcomment %}
             </div>
         </div>
         <nav>
             <!-- Links -->
             <div id="abc">
                  <h2>Company</h2>
-                <a href="#">Home</a>
+                <a href="{% url 'core:index' %}">Home</a>
                 <a href="#">News</a>
-                <a href="#">Account</a>
+                {% comment %} <a href="{% url 'accounts:index' %}">Account</a> {% endcomment %}
              </div>
              <div id="def">
                  <h2>Services</h2>
                  <a href="#">VoxelEngine</a>
-                 <a href="#">VoxelGames</a>
+                 <a href="{% url 'voxelgames:index' %}">VoxelGames</a>
                  <a href="#">My Projects</a>
              </div>
              <div>

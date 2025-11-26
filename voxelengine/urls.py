@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import *
 
-app_name = "core"
+app_name = 'voxelengine'
 
 urlpatterns = [
-    path('', index_view, name="index")
+    path('', voxelengine_index_view, name="index")
 ]
