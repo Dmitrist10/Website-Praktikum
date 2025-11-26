@@ -5,5 +5,6 @@ from .views import *
 app_name = 'voxelgames'
 
 urlpatterns = [
-    path('', voxelgames_index_view, name="index")
+    path('', voxelgames_index_view, name="index"),
+    path('voxelgames_notLogined/', voxelgames_notLogined_view, name="not_logined"),
 ]

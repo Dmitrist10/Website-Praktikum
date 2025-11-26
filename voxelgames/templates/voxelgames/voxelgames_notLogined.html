@@ -1,0 +1,24 @@
+{% extends 'voxelgames/voxelgamesBase.html' %}
+
+{% block voxelgames_content %}
+
+<main class="main-container" id="voxelgames-index-sections-main">
+
+    <section class="rainbowBG">
+        <div id="voxelgames-noLogin">
+            <h1>VoxelGames</h1>
+            <h2>Pleas login into your account to access the metaverse</h2>
+            <p>
+                you currently are not logged in. <br>
+                the metaverse is waiting for you.
+            </p>
+            <div class="hero-cta">                          
+                <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+                <a href="{% url 'account_signup' %}" class="btn btn-secondary">Sign Up</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

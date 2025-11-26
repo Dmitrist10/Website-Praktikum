@@ -9,14 +9,14 @@
     <title>{% block title %}My Site{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
 </head>
-<body>
+<body class="{% block global_theme %}{% endblock %}">
 
     <header id="global-header">
         <div id="global-header-left">
-            <h1 class="Logo">
+            <a href="{% url 'core:index' %}" class="Logo">
                 <i class="icon_logo"></i>
                 DarkSecret
-            </h1>
+            </a>
         </div>
         <nav>
             <a href="{% url 'core:index' %}" class="active">Home</a>
