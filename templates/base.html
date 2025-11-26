@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+
+    <header id="global-header">
+        <div id="global-header-left">
+            <h1 class="Logo">
+                <i class="icon_logo"></i>
+                DarkSecret
+            </h1>
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">VoxelEngine</a>
+            <a href="#">VoxelGames</a>
+        </nav>
+        <div id="global-header-right">
+            <a href="#">Login</a>
+        </div>
+    </header>
+    <main id="global-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer id="global-footer">
+        <p>&copy; 2022 My Site. All rights reserved.</p>
+        <div id="global-footer-companyInfo">
+            <div id="company-logo">
+                <h1 class="Logo">
+                    DarkSecretStudios
+                </h1>
+            </div>
+        </div>
+        <nav>
+            <!-- Links -->
+            <div id="abc">
+                 <h2>Company</h2>
+                <a href="#">Home</a>
+                <a href="#">News</a>
+                <a href="#">Account</a>
+             </div>
+             <div id="def">
+                 <h2>Services</h2>
+                 <a href="#">VoxelEngine</a>
+                 <a href="#">VoxelGames</a>
+                 <a href="#">My Projects</a>
+             </div>
+             <div>
+                <h2>Legal</h2>
+                <a href="#">Terms of Service</a>
+                <a href="#">Eula</a>
+                <a href="#">Privacy policy</a>
+             </div>
+        </nav>
+    </footer>
+
+</body>
+</html>
