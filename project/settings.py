@@ -24,11 +24,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # Added for allauth
+    'django.contrib.sites',
 
-    'allauth', # Added for allauth
-    'allauth.account', # Added for allauth
-    'allauth.socialaccount', # Added for allauth
+    # Allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 
     'core.apps.CoreConfig',
     'voxelgames.apps.VoxelgamesConfig',
@@ -43,41 +45,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware', # Added for allauth
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
-
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-SITE_ID = 1
-
-
-# Allauth Configuration
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
-
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-# Email backend for development
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-
-AUTH_USER_MODEL = 'accounts.CustomUser'
-
-# make easy to create new users and login for now
-ACCOUNT_LOGIN_METHODS = ["username"] # 'email'
-ACCOUNT_UNIQUE_EMAIL = False # true
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*'] # , 'password2*'
-ACCOUNT_EMAIL_VERIFICATION = 'optional'  # mandatory
-
-
 
 TEMPLATES = [
     {
@@ -97,19 +68,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -142,8 +106,54 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Allauth Configuration
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# Email backend for development
+# For production, use 'django.core.mail.backends.smtp.EmailBackend'
+# and configure the following:
+# EMAIL_HOST = 'smtp.gmail.com'  # or your custom server
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'test@darksecretstudios.com'
+# EMAIL_HOST_PASSWORD = 'your-password'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# make easy to create new users and login for now
+ACCOUNT_LOGIN_METHODS = ["username", "email"]
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_SIGNUP_FIELDS = ['email', 'username*']  # ,'password1*', 'password2*'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+}
