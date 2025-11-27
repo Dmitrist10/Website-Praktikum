@@ -1,6 +1,5 @@
-/* =========================================
-   MAIN STYLESHEET ENTRY POINT
-   ========================================= */
+/* Entry Point */
+
 
 /* 1. Base */
 @import url('base/_variables.css');

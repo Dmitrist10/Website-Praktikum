@@ -2,10 +2,15 @@
 {% load static %}
 
 {% block content %}
-<div class="auth-container" style="display: flex; justify-content: center; align-items: center; min-height: 80vh; padding: 2rem;">
-    <div class="auth-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); width: 100%; max-width: 400px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);">
-        {% block auth_content %}
-        {% endblock %}
+<div class="rainbow-bg">
+    <div class="auth-container"
+        style="display: flex; justify-content: center; align-items: center; min-height: 80vh; padding: 2rem;">
+        {% comment %} <div class="auth-card"
+            style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); width: 100%; max-width: 400px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);">
+            {% endcomment %}
+            {% block auth_content %}
+            {% endblock %}
+            {% comment %} </div> {% endcomment %}
     </div>
 </div>
 {% endblock %}

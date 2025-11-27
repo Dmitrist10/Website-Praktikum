@@ -1,7 +1,6 @@
 /* Auth Container */
 .auth-container {
     max-width: 900px;
-    /* Increased from 600px */
     margin: var(--space-xl) auto;
     padding: var(--space-md);
     width: 100%;
@@ -47,14 +46,14 @@
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4);
     padding: 4rem 3rem;
-    width: 100%;
+    width: 80%;
+    max-width: 800px;
     color: white;
     margin: 0 auto;
 }
 
 .glass-panel h1 {
     font-size: 3.5rem;
-    /* Slightly adjusted for better fit */
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
 }
@@ -63,4 +62,40 @@
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Social Login Buttons */
+.socialaccount_providers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socialaccount_providers li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #333;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-normal);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--space-xs);
+}
+
+.socialaccount_providers li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa;
+}
+
+/* Specific Google Button Styling (if class is available, otherwise generic above works) */
+.socialaccount_provider.google {
+    background-color: white;
+    color: #4285F4;
+    /* Google Blue */
 }
