@@ -3,14 +3,47 @@
 {% block core_content %}
 <section class="section">
     <div class="container">
-        <h1 class="text-center mb-md">Legal Information</h1>
-        <div class="card">
-            <h2>Terms of Service</h2>
-            <p>By using our services, you agree to these terms...</p>
-            <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 2rem 0;">
-            <h2>Privacy Policy</h2>
-            <p>We value your privacy and are committed to protecting your personal data...</p>
+        <h1 class="text-center mb-lg">Legal Information</h1>
+        
+        <div class="grid grid-3">
+            <a href="{% url 'core:legal_terms' %}" class="card-link">
+                <div class="card hover-lift h-full flex flex-col items-center text-center p-lg">
+                    <div class="icon-lg mb-md">⚖️</div>
+                    <h2>Terms of Service</h2>
+                    <p>The rules and regulations for using our services.</p>
+                    <span class="btn btn-outline mt-auto">Read Terms</span>
+                </div>
+            </a>
+
+            <a href="{% url 'core:legal_privacy' %}" class="card-link">
+                <div class="card hover-lift h-full flex flex-col items-center text-center p-lg">
+                    <div class="icon-lg mb-md">🔒</div>
+                    <h2>Privacy Policy</h2>
+                    <p>How we collect, use, and protect your personal data.</p>
+                    <span class="btn btn-outline mt-auto">Read Policy</span>
+                </div>
+            </a>
+
+            <a href="{% url 'core:legal_eula' %}" class="card-link">
+                <div class="card hover-lift h-full flex flex-col items-center text-center p-lg">
+                    <div class="icon-lg mb-md">📄</div>
+                    <h2>EULA</h2>
+                    <p>End User License Agreement for our software.</p>
+                    <span class="btn btn-outline mt-auto">Read EULA</span>
+                </div>
+            </a>
         </div>
-    </div>
+    </div> 
 </section>
+
+<style>
+    .mb-lg { margin-bottom: 4rem; }
+    .p-lg { padding: 2rem; }
+    .h-full { height: 100%; }
+    .icon-lg { font-size: 3rem; }
+    .card-link { display: block; height: 100%; text-decoration: none; color: inherit; }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--color-primary); }
+    .mt-auto { margin-top: auto; }
+</style>
 {% endblock %}

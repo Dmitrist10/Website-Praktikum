@@ -1,0 +1,138 @@
+/* Core Pages Styles (Home, Legal, News) */
+
+/* --- General --- */
+.mb-lg {
+    margin-bottom: 4rem;
+}
+
+.p-lg {
+    padding: 2rem;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-alt {
+    background-color: var(--color-bg-alt);
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+/* --- Animations --- */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Icons --- */
+.icon-box {
+    font-size: 2.5rem;
+}
+
+.icon-lg {
+    font-size: 3rem;
+}
+
+/* --- Glass Effect --- */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Legal Page --- */
+.card-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-link .card:hover {
+    border-color: var(--color-primary);
+}
+
+/* --- News Page --- */
+.news-image-placeholder {
+    background: var(--color-bg-alt);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: var(--radius-md);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--color-text);
+}

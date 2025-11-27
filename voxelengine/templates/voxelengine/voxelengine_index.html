@@ -12,10 +12,10 @@
                 Optimize <span style="color: var(--color-text-muted);">Nothing.</span>
             </h1>
             <p class="hero-subtitle">
-                The power of high-fidelity volumetric rendering meets the simplicity of building blocks.
+                The power of high-fidelity Game Engine meets the simplicity of building blocks.
             </p>
             <div class="flex gap-md">
-                <a href="#" class="btn btn-primary">Download Studio</a>
+                <a href="#" class="btn btn-primary">Download Launcher</a>
                 <a href="#" class="btn btn-outline">View Roadmap</a>
             </div>
         </div>
@@ -26,8 +26,8 @@
     <div class="container">
         <div class="grid grid-2 items-center gap-xl">
             <div>
-                <h2>VoxelScript Node Graph</h2>
-                <p>Visual scripting for everyone. Create complex behaviors without writing a single line of code, or dive deep with our C++ API.</p>
+                <h2>VoxelScript write code with JavaScript</h2>
+                <p>You can chose between visual scripting with our Blueprint or Blocks system or write code with javascript using our API</p>
                 <ul style="margin-top: 1rem; color: var(--color-text-muted);">
                     <li style="margin-bottom: 0.5rem;">✓ Real-time compilation</li>
                     <li style="margin-bottom: 0.5rem;">✓ Hot-reloading</li>
@@ -35,9 +35,9 @@
                 </ul>
             </div>
             <div class="card" style="font-family: monospace; padding: 2rem;">
-                <span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">WorldGen</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Node</span> {<br>
-                &nbsp;&nbsp;<span style="color: #dcdcaa;">onStart</span>() {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #569cd6;">this</span>.voxelGrid.<span style="color: #dcdcaa;">generate</span>({<br>
+                <span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">WorldGen</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">WorldGenSettings</span> {<br>
+                &nbsp;&nbsp;<span style="color: #dcdcaa;">GetSettings</span>() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #569cd6;">this</span>.settings.<span style="color: #dcdcaa;">generate</span>({<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed: <span style="color: #b5cea8;">12345</span>,<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biome: <span style="color: #ce9178;">'neon_city'</span><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;});<br>
@@ -63,12 +63,12 @@
             <div class="card text-center">
                 <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
                 <h3>Voxel Art</h3>
-                <p>Import from MagicaVoxel or build in-engine.</p>
+                <p>Import from Blockbench, Blender or build in-engine.</p>
             </div>
             <div class="card text-center">
                 <div style="font-size: 3rem; margin-bottom: 1rem;">🌐</div>
                 <h3>Multiplayer</h3>
-                <p>Instant replication and authoritative server.</p>
+                <p>Instant replication and authoritative server.<br> with 0 extra code.</p>
             </div>
         </div>
     </div>

@@ -1,20 +1,22 @@
 {% extends 'core/coreBase.html' %}
+{% load static %}
 
 {% block theme_name %}core{% endblock %}
 
 {% block core_content %}
 
-<section class="hero" id="core-index-section-hero">
+<section class="hero" id="core-index-section-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static 'img/hero_bg.png' %}'); background-size: cover; background-position: center;">
     <div class="container">
-        <div class="hero-content">
-            <span class="badge">EST. 2025</span>
+        <div class="hero-content text-center">
+            <span class="badge mb-md">EST. 2025</span>
             <h1 class="hero-title">
+                DarkSecret Studios <br>
                 The foundation for<br>virtual worlds.
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle mx-auto">
                 We build the next generation of volumetric technology, empowering millions of developers and players to create without limits.
             </p>
-            <div class="flex gap-md">
+            <div class="flex gap-md justify-center mt-md">
                 <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Explore Technology</a>
                 <a href="{% url 'voxelengine:index' %}" class="btn btn-outline">Visit Platform</a>
             </div>
@@ -22,26 +24,68 @@
     </div>
 </section>
 
-<section class="section">
+<section class="section bg-alt">
     <div class="container">
-        <div class="text-center mb-md">
-            <h2>Our Innovations</h2>
-            <p>Pioneering the future of digital interaction.</p>
-        </div>
-
-        <div class="grid grid-2">
-            <div class="card">
-                <h3>VoxelEngine</h3>
-                <p>High-performance volumetric rendering engine designed for massive scale and interactivity.</p>
-                <a href="{% url 'voxelengine:index' %}" class="btn btn-outline mt-md">Learn More</a>
+        <div class="grid grid-2 items-center gap-xl">
+            <div>
+                <h2>About Us</h2>
+                <p class="text-lg">DarkSecret Studios is a pioneer in voxel-based rendering technology. We believe that the future of gaming lies in true volumetric freedom.</p>
+                <p>Founded in 2025, our mission is to democratize game development by providing tools that are powerful enough for professionals yet accessible to everyone.</p>
+                <a href="#" class="btn btn-secondary mt-md">Read Our Story</a>
             </div>
-            <div class="card">
-                <h3>VoxelGames</h3>
-                <p>A community-powered arcade where players can build, share, and play instantly.</p>
-                <a href="{% url 'voxelgames:index' %}" class="btn btn-outline mt-md">Play Now</a>
+            <div class="card glass-effect">
+                <h3>Our Vision</h3>
+                <p>"To create a universe where every pixel is a building block for your imagination."</p>
+                <div class="mt-md flex items-center gap-sm">
+                    <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%;"></div>
+                    <div>
+                        <strong>Jane Doe</strong><br>
+                        <small class="text-muted">CEO & Founder</small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<section class="section">
+    <div class="container">
+        <div class="text-center mb-lg">
+            <h2>Our Innovations</h2>
+            <p>Making your virtual world possible with cutting-edge tech.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card hover-lift">
+                <div class="icon-box mb-md">🚀</div>
+                <h3>VoxelEngine</h3>
+                <p>High-performance volumetric rendering engine designed for massive scale and interactivity.</p>
+                <a href="{% url 'voxelengine:index' %}" class="text-primary font-bold mt-sm block">Learn More &rarr;</a>
+            </div>
+            <div class="card hover-lift">
+                <div class="icon-box mb-md">🎮</div>
+                <h3>VoxelGames</h3>
+                <p>A community-powered arcade where players can build, share, and play instantly.</p>
+                <a href="{% url 'voxelgames:index' %}" class="text-primary font-bold mt-sm block">Play Now &rarr;</a>
+            </div>
+            <div class="card hover-lift">
+                <div class="icon-box mb-md">☁️</div>
+                <h3>Cloud Sync</h3>
+                <p>Seamlessly sync your worlds across devices with our distributed cloud architecture.</p>
+                <span class="text-muted mt-sm block">Coming Soon</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .bg-alt { background-color: var(--color-bg-alt); }
+    .text-lg { font-size: 1.125rem; margin-bottom: 1rem; }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .icon-box { font-size: 2.5rem; }
+    .glass-effect { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+</style>
 
 {% endblock %}
