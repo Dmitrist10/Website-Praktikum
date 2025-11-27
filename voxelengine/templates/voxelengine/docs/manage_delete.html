@@ -1,0 +1,18 @@
+{% extends 'voxelengine/veBase.html' %}
+
+{% block voxelengine_content %}
+<div class="container" style="padding-top: 4rem; max-width: 600px; text-center;">
+    <div class="card">
+        <h2 class="mb-md">Delete Page?</h2>
+        <p class="mb-md">Are you sure you want to delete "<strong>{{ page.title }}</strong>"? This action cannot be undone.</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="flex justify-center gap-md">
+                <button type="submit" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444;">Yes, Delete</button>
+                <a href="{% url 'voxelengine:docs_manage_list' %}" class="btn btn-outline">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

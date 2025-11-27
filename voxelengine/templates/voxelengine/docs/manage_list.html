@@ -1,0 +1,98 @@
+{% extends 'voxelengine/veBase.html' %}
+
+{% block voxelengine_content %}
+<div class="container" style="padding-top: 2rem;">
+    <div class="flex justify-between items-center mb-md">
+        <h2>Manage Documentation</h2>
+        <div class="flex gap-sm">
+            <a href="{% url 'voxelengine:docs_manage_category_list' %}" class="btn btn-outline">Manage Categories</a>
+            <a href="{% url 'voxelengine:docs_manage_create' %}" class="btn btn-primary">Create New Page</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        
+        {% regroup pages|dictsort:"category.id" by category as category_list %}
+        {% for category in category_list %}
+        <div class="mb-lg">
+            <h3 class="mb-md">{{ category.grouper.title }}</h3>
+            <ul class="nested-sortable-list root-list" data-category="{{ category.grouper.id }}" style="min-height: 20px; border: 1px dashed var(--color-border); padding: 1rem;">
+                {% for page in category.list %}
+                    {% if not page.parent %}
+                        {% include 'voxelengine/docs/_manage_list_item.html' with page=page %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+
+        <div class="mt-md text-right">
+            <button id="save-order-btn" class="btn btn-primary">Save Order</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var nestedSortables = [].slice.call(document.querySelectorAll('.nested-sortable-list'));
+
+        for (var i = 0; i < nestedSortables.length; i++) {
+            new Sortable(nestedSortables[i], {
+                group: 'nested',
+                animation: 150,
+                fallbackOnBody: true,
+                swapThreshold: 0.65,
+                handle: '.drag-handle'
+            });
+        }
+
+        document.getElementById('save-order-btn').addEventListener('click', function() {
+            var data = [];
+            
+            // We only need to traverse the root lists of each category
+            document.querySelectorAll('.root-list').forEach(function(rootList) {
+                var categoryId = rootList.dataset.category;
+                
+                function serializeList(list) {
+                    var items = [];
+                    var listItems = list.children;
+                    for (var i = 0; i < listItems.length; i++) {
+                        var li = listItems[i];
+                        if (li.classList.contains('nested-sortable-item')) {
+                            var item = {
+                                id: li.dataset.id,
+                                children: []
+                            };
+                            var childList = li.querySelector('.nested-sortable-list');
+                            if (childList) {
+                                item.children = serializeList(childList);
+                            }
+                            items.push(item);
+                        }
+                    }
+                    return items;
+                }
+
+                var categoryItems = serializeList(rootList);
+                data = data.concat(categoryItems);
+            });
+
+            fetch('{% url "voxelengine:docs_manage_reorder" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    location.reload();
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

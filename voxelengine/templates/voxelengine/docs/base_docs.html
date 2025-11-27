@@ -1,0 +1,49 @@
+{% extends 'voxelengine/veBase.html' %}
+
+{% block voxelengine_content %}
+<div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <div class="docs-layout" style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
+        
+        <!-- Sidebar -->
+        <aside class="docs-sidebar">
+            {% if user.is_staff %}
+            <div style="margin-bottom: 1rem;">
+                <a href="{% url 'voxelengine:docs_manage_list' %}" class="btn btn-sm btn-outline">Manage Docs</a>
+            </div>
+            {% endif %}
+
+            {% for category in categories %}
+            <div class="docs-category" style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1rem; color: var(--color-text); margin-bottom: 0.5rem; font-weight: 600;">{{ category.title }}</h4>
+                <ul style="border-left: 1px solid var(--color-border); padding-left: 1rem;">
+                    {% for page in category.pages.all %}
+                        {% if not page.parent %}
+                            {% include 'voxelengine/docs/_sidebar_item.html' with page=page %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </aside>
+
+        <!-- Content -->
+        <main class="docs-content">
+            {% block docs_content %}
+            <div class="text-center" style="padding: 4rem 0;">
+                <h2>Welcome to VoxelEngine Docs</h2>
+                <p>Select a topic from the sidebar to get started.</p>
+            </div>
+            {% endblock %}
+        </main>
+    </div>
+</div>
+
+<style>
+    .docs-link:hover, .docs-link.active {
+        color: var(--color-primary);
+    }
+    .docs-link.active {
+        font-weight: 500;
+    }
+</style>
+{% endblock %}

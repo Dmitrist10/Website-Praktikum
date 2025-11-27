@@ -11,7 +11,7 @@
         <a href="{% url 'voxelengine:download' %}" class="nav-link {% if request.resolver_match.url_name == 'download' %}active{% endif %}">Download</a>
         <a href="{% url 'voxelengine:subscriptions' %}" class="nav-link {% if request.resolver_match.url_name == 'subscriptions' %}active{% endif %}">Subscriptions</a>
         <a href="#" class="nav-link">News</a>
-        <a href="#" class="nav-link">Docs</a>
+        <a href="{% url 'voxelengine:docs_index' %}" class="nav-link {% if 'docs' in request.resolver_match.url_name %}active{% endif %}">Docs</a>
         <a href="#" class="nav-link">Showcase</a>
     </div>
 </div>

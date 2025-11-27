@@ -1,0 +1,21 @@
+{% extends 'voxelengine/docs/base_docs.html' %}
+
+{% block docs_content %}
+<article class="prose">
+    <h1 style="margin-bottom: 1rem;">{{ current_page.title }}</h1>
+    
+    {% if user.is_staff %}
+    <div style="margin-bottom: 2rem;">
+        <a href="{% url 'voxelengine:docs_manage_edit' current_page.pk %}" class="btn btn-sm btn-outline">Edit Page</a>
+    </div>
+    {% endif %}
+
+    <div class="content">
+        {{ current_page.content|safe }}
+    </div>
+    
+    <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 0.875rem;">
+        Last updated: {{ current_page.updated_at|date:"F j, Y" }}
+    </div>
+</article>
+{% endblock %}

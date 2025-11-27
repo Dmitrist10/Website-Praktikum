@@ -9,15 +9,15 @@
 <section class="hero" id="core-index-section-hero">
     <div class="container">
         <div class="hero-content">
-            <span class="badge" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border-color: rgba(99, 102, 241, 0.4);">STUDIO</span>
+            <span class="badge" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border-color: rgba(99, 102, 241, 0.4);">We make your game ideas come to life</span>
             <h1 class="hero-title">
                 DarkSecret <span style="color: var(--color-accent);">Studios</span>
             </h1>
             <p class="hero-subtitle">
-                Pushing the boundaries of voxel technology and gaming. We build the engine, the games, and the future.
+                We are making a the VoxelEngine that powers your VoxelGames.
             </p>
             <div class="flex gap-md">
-                <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Our Games</a>
+                <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Our Platform</a>
                 <a href="{% url 'voxelengine:index' %}" class="btn btn-secondary">Get the Engine</a>
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="text-center mb-xl">
             <h2>About Us</h2>
             <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">
-                We make your game ideas come to life with our VoxelEngine and VoxelGames platforms.
+                We make the VoxelEngine and the VoxelGames Platform.
             </p>
         </div>
     </div>
@@ -46,17 +46,17 @@
             <div class="card">
                 <div style="font-size: 2.5rem; margin-bottom: 1rem;">🚀</div>
                 <h3>Voxel Engine</h3>
-                <p>A high-performance, custom-built engine designed for massive voxel worlds and real-time editing.</p>
+                <p>A Game Engine that allows you to create 2D/3D/Voxel games without coding.</p>
             </div>
             <div class="card">
                 <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚛️</div>
-                <h3>Physics System</h3>
-                <p>Advanced rigid body physics and collision detection tailored for block-based environments.</p>
+                <h3>VoxelGames Platform</h3>
+                <p>A Platform that allows you to create and publish your games made in VoxelEngine.</p>
             </div>
             <div class="card">
                 <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌐</div>
-                <h3>Networking</h3>
-                <p>Seamless multiplayer architecture with authoritative server logic and instant replication.</p>
+                <h3>Multplayer</h3>
+                <p>A service that allows you to seamlessly make multiplayer games made in VoxelEngine.</p>
             </div>
         </div>
     </div>
@@ -67,32 +67,31 @@
     <div class="container">
         <div class="flex justify-between items-center mb-md">
             <h2>Made with Our Engine</h2>
-            <a href="{% url 'voxelgames:index' %}" class="btn btn-outline">View All Games</a>
+            <a href="{% url 'voxelgames:store' %}" class="btn btn-outline">View All Games</a>
         </div>
         <div class="grid grid-3">
-            <!-- Showcase 1 -->
             <div class="card">
                 <div style="height: 180px; background: #333; border-radius: var(--radius-md); margin-bottom: var(--space-sm); overflow: hidden;">
                     <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e293b, #3b82f6);"></div>
                 </div>
-                <h3>Voxel Arena</h3>
-                <p>Fast-paced multiplayer shooter.</p>
+                <h3>Long shoot</h3>
+                <p>A popular shooter in minecraft style</p>
             </div>
             <!-- Showcase 2 -->
             <div class="card">
                 <div style="height: 180px; background: #333; border-radius: var(--radius-md); margin-bottom: var(--space-sm); overflow: hidden;">
                     <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #3f2c2c, #ef4444);"></div>
                 </div>
-                <h3>Block Racer</h3>
-                <p>High-octane racing on custom tracks.</p>
+                <h3>Nebula</h3>
+                <p>A big open world sci-fi game where you travel to different planets</p>
             </div>
             <!-- Showcase 3 -->
             <div class="card">
                 <div style="height: 180px; background: #333; border-radius: var(--radius-md); margin-bottom: var(--space-sm); overflow: hidden;">
                     <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #14532d, #22c55e);"></div>
                 </div>
-                <h3>Sky Survival</h3>
-                <p>Survive and thrive in the clouds.</p>
+                <h3>Lost in the forest</h3>
+                <p>You are traped in a old house that is located in the middle of a forest.</p>
             </div>
         </div>
     </div>
@@ -110,16 +109,16 @@
                 <div style="width: 100px; height: 100px; background: #333; border-radius: var(--radius-md); flex-shrink: 0;"></div>
                 <div>
                     <span class="badge" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">Update</span>
-                    <h3 style="margin-top: 0.5rem; font-size: 1.25rem;">Engine 2.0 Released</h3>
-                    <p style="font-size: 0.9rem;">Major performance improvements and new rendering pipeline.</p>
+                    <h3 style="margin-top: 0.5rem; font-size: 1.25rem;">Engine 0.3.2 Released</h3>
+                    <p style="font-size: 0.9rem;">The Scene system is completle remade</p>
                 </div>
             </div>
             <div class="card flex gap-md items-start">
                 <div style="width: 100px; height: 100px; background: #333; border-radius: var(--radius-md); flex-shrink: 0;"></div>
                 <div>
-                    <span class="badge" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">Community</span>
-                    <h3 style="margin-top: 0.5rem; font-size: 1.25rem;">Creator Contest Winners</h3>
-                    <p style="font-size: 0.9rem;">Check out the amazing creations from our latest jam.</p>
+                    <span class="badge" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">Game of 2025</span>
+                    <h3 style="margin-top: 0.5rem; font-size: 1.25rem;">The best game on VoxelGames of 2025</h3>
+                    <p style="font-size: 1rem;">"The Backrooms" is a 3D Voxel RP game ... ich bin zu faul um weiter zu schreiben</p>
                 </div>
             </div>
         </div>

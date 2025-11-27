@@ -1,0 +1,14 @@
+<li style="margin-bottom: 0.25rem;">
+    <a href="{% url 'voxelengine:docs_page' page.category.slug page.slug %}" 
+       class="docs-link {% if current_page.id == page.id %}active{% endif %}"
+       style="display: block; padding: 0.25rem 0; color: var(--color-text-muted); font-size: 0.9rem; transition: color 0.2s;">
+        {{ page.title }}
+    </a>
+    {% if page.children.exists %}
+        <ul style="padding-left: 1rem; border-left: 1px solid var(--color-border); margin-left: 0.5rem;">
+            {% for child in page.children.all %}
+                {% include 'voxelengine/docs/_sidebar_item.html' with page=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
