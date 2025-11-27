@@ -5,18 +5,18 @@
 
 {% block core_content %}
 
-<section class="hero" id="core-index-section-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static 'img/hero_bg.png' %}'); background-size: cover; background-position: center;">
+<section class="hero" id="core-index-section-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static 'img/hero_bg.png' %}'); background-size: cover; background-position: center;">
     <div class="container">
         <div class="hero-content text-center">
             <span class="badge mb-md">EST. 2025</span>
             <h1 class="hero-title">
                 DarkSecret Studios <br>
-                The foundation for<br>virtual worlds.
+                <span class="text-gradient">The Foundation for Virtual Worlds</span>
             </h1>
-            <p class="hero-subtitle mx-auto">
+            <p class="hero-subtitle mx-auto text-lg opacity-80">
                 We build the next generation of volumetric technology, empowering millions of developers and players to create without limits.
             </p>
-            <div class="flex gap-md justify-center mt-md">
+            <div class="flex gap-md justify-center mt-lg">
                 <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Explore Technology</a>
                 <a href="{% url 'voxelengine:index' %}" class="btn btn-outline">Visit Platform</a>
             </div>

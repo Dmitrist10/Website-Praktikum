@@ -8,7 +8,7 @@ app_name = 'voxelengine'
 
 urlpatterns = [
     path('', voxelengine_index_view, name="index"),
-    path('download/installer', download_installer, name='downloade_installer'),
+    path('download/installer', download_installer, name='download_installer'),
     path('download/', download_page_view, name="download"),
     path('subscriptions/', subscriptions_view, name="subscriptions"),
 ]

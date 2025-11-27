@@ -1,0 +1,34 @@
+{% extends 'core/coreBase.html' %}
+
+{% block core_content %}
+<section class="section">
+    <div class="container">
+        <div class="text-center mb-lg">
+            <h1>General Development</h1>
+            <p class="text-muted">Frontend & Backend Skills</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card hover-lift">
+                <h3>HTML & CSS</h3>
+                <p>Building beautiful interfaces.</p>
+                <span class="badge mt-sm">Frontend</span>
+            </div>
+            <div class="card hover-lift">
+                <h3>Django Fundamentals</h3>
+                <p>Backend logic with Python.</p>
+                <span class="badge mt-sm">Backend</span>
+            </div>
+            <div class="card hover-lift">
+                <h3>JavaScript ES6+</h3>
+                <p>Modern JS for interactive web apps.</p>
+                <span class="badge mt-sm">Frontend</span>
+            </div>
+        </div>
+
+        <div class="text-center mt-xl">
+            <a href="{% url 'core:learn_index' %}" class="btn btn-outline">&larr; Back to Learn Center</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'core/coreBase.html' %}
+
+{% block core_content %}
+<section class="section">
+    <div class="container">
+        <h1 class="text-center mb-lg">Projects</h1>
+
+        <!-- 1. Main Projects -->
+        <div class="mb-xl">
+            <h2 class="mb-md">Flagship Projects</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="icon-lg mb-md">🚀</div>
+                    <h3>VoxelEngine</h3>
+                    <p class="mb-md">Our core technology. A high-performance volumetric rendering engine.</p>
+                    <a href="{% url 'voxelengine:index' %}" class="btn btn-primary">Explore Engine</a>
+                </div>
+                <div class="card hover-lift">
+                    <div class="icon-lg mb-md">🎮</div>
+                    <h3>VoxelGames</h3>
+                    <p class="mb-md">The ultimate sandbox platform built on VoxelEngine.</p>
+                    <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Play Games</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. My Projects -->
+        <div class="mb-xl">
+            <h2 class="mb-md">My Projects</h2>
+            <div class="grid grid-3">
+                <div class="card hover-lift">
+                    <h3>Project Alpha</h3>
+                    <p class="text-muted text-sm mb-sm">Experimental</p>
+                    <p>A testbed for new physics interactions.</p>
+                </div>
+                <div class="card hover-lift">
+                    <h3>Neon City</h3>
+                    <p class="text-muted text-sm mb-sm">Art Demo</p>
+                    <p>Showcasing the lighting capabilities of the engine.</p>
+                </div>
+                <div class="card hover-lift">
+                    <h3>Dungeon Crawler</h3>
+                    <p class="text-muted text-sm mb-sm">Game Prototype</p>
+                    <p>A simple RPG built with VoxelScript.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Community Projects -->
+        <div class="mb-xl">
+            <h2 class="mb-md">Community Spotlight</h2>
+            <div class="grid grid-3">
+                <div class="card hover-lift">
+                    <h3>SkyBlock Remastered</h3>
+                    <p class="text-muted text-sm mb-sm">by User123</p>
+                    <p>The classic survival experience, reimagined.</p>
+                </div>
+                <div class="card hover-lift">
+                    <h3>Space Station 13</h3>
+                    <p class="text-muted text-sm mb-sm">by SpaceCadet</p>
+                    <p>A complex simulation of a space station.</p>
+                </div>
+                <div class="card hover-lift">
+                    <h3>Voxel Racer</h3>
+                    <p class="text-muted text-sm mb-sm">by SpeedDemon</p>
+                    <p>High-speed racing through procedural terrain.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

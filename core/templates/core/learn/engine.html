@@ -1,0 +1,34 @@
+{% extends 'core/coreBase.html' %}
+
+{% block core_content %}
+<section class="section">
+    <div class="container">
+        <div class="text-center mb-lg">
+            <h1>Engine Courses</h1>
+            <p class="text-muted">Master VoxelEngine</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card hover-lift">
+                <h3>VoxelScript 101</h3>
+                <p>Introduction to scripting logic.</p>
+                <span class="badge mt-sm">Beginner</span>
+            </div>
+            <div class="card hover-lift">
+                <h3>Advanced Physics</h3>
+                <p>Rigidbodies and collision responses.</p>
+                <span class="badge mt-sm">Intermediate</span>
+            </div>
+            <div class="card hover-lift">
+                <h3>Shader Programming</h3>
+                <p>Writing custom shaders for the engine.</p>
+                <span class="badge mt-sm">Advanced</span>
+            </div>
+        </div>
+        
+        <div class="text-center mt-xl">
+            <a href="{% url 'core:learn_index' %}" class="btn btn-outline">&larr; Back to Learn Center</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

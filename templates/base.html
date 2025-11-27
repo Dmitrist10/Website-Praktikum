@@ -18,7 +18,9 @@
                 DarkSecret
             </a>
             <nav class="flex gap-md">
-                <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.app_name == 'core' %}active{% endif %}">Home</a>
+                <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.app_name == 'core' and request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+                <a href="{% url 'core:projects' %}" class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Projects</a>
+                <a href="{% url 'core:learn_index' %}" class="nav-link {% if 'learn' in request.resolver_match.url_name %}active{% endif %}">Learn</a>
                 <a href="{% url 'voxelengine:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelengine' %}active{% endif %}">VoxelEngine</a>
                 <a href="{% url 'voxelgames:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelgames' %}active{% endif %}">VoxelGames</a>
             </nav>
@@ -46,23 +48,24 @@
                     <h4>Company</h4>
                     <ul>
                         <li><a href="{% url 'core:index' %}">Home</a></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href="{% url 'core:news' %}">News</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#">VoxelEngine</a></li>
+                        <li><a href="{% url 'voxelengine:index' %}">VoxelEngine</a></li>
                         <li><a href="{% url 'voxelgames:index' %}">VoxelGames</a></li>
-                        <li><a href="#">My Projects</a></li>
+                        <li><a href="{% url 'core:projects' %}">My Projects</a></li>
+                        <li><a href="{% url 'core:showcase' %}">CSS Showcase</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">EULA</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="{% url 'core:legal_terms' %}">Terms of Service</a></li>
+                        <li><a href="{% url 'core:legal_eula' %}">EULA</a></li>
+                        <li><a href="{% url 'core:legal_privacy' %}">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>

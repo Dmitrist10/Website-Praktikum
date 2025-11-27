@@ -1,0 +1,86 @@
+{% extends 'core/coreBase.html' %}
+
+{% block core_content %}
+<section class="section">
+    <div class="container">
+        <h1 class="text-center mb-lg">CSS Showcase</h1>
+        <p class="text-center mb-lg text-muted">A demonstration of all available components and styles.</p>
+
+        <!-- Typography -->
+        <div class="card mb-lg">
+            <h2 class="mb-md">Typography</h2>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <p>This is a standard paragraph. It has some text to demonstrate the font and line height. <a href="#" class="text-primary">This is a link</a>.</p>
+            <p class="text-muted">This is muted text.</p>
+            <p class="text-sm">This is small text.</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="card mb-lg">
+            <h2 class="mb-md">Buttons</h2>
+            <div class="flex gap-sm items-center flex-wrap">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-outline">Outline Button</button>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="mb-lg">
+            <h2 class="mb-md">Cards</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Standard Card</h3>
+                    <p>This is a standard card component.</p>
+                </div>
+                <div class="card glass-effect">
+                    <h3>Glass Card</h3>
+                    <p>This card has the glassmorphism effect applied.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forms -->
+        <div class="card mb-lg">
+            <h2 class="mb-md">Forms</h2>
+            <div class="form-group">
+                <label class="block mb-xs font-medium">Text Input</label>
+                <input type="text" class="input" placeholder="Enter text...">
+            </div>
+            <div class="form-group">
+                <label class="block mb-xs font-medium">Select Input</label>
+                <select class="input">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="flex items-center gap-sm">
+                    <input type="checkbox">
+                    <span>Checkbox option</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Grid System -->
+        <div class="card mb-lg">
+            <h2 class="mb-md">Grid System</h2>
+            <div class="grid grid-3 gap-sm">
+                <div class="bg-alt p-md text-center rounded">1</div>
+                <div class="bg-alt p-md text-center rounded">2</div>
+                <div class="bg-alt p-md text-center rounded">3</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .rounded { border-radius: var(--radius-md); }
+    .bg-alt { background-color: var(--color-bg-alt); }
+    .p-md { padding: 1rem; }
+</style>
+{% endblock %}

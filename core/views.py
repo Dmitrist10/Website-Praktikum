@@ -18,3 +18,18 @@ def legal_privacy_view(request):
 
 def legal_eula_view(request):
     return render(request, 'core/legal_eula.html')
+
+def showcase_view(request):
+    return render(request, 'core/showcase.html')
+
+def projects_view(request):
+    return render(request, 'core/projects.html')
+
+def learn_index_view(request):
+    return render(request, 'core/learn/index.html')
+
+def learn_engine_view(request):
+    return render(request, 'core/learn/engine.html')
+
+def learn_general_view(request):
+    return render(request, 'core/learn/general.html')
