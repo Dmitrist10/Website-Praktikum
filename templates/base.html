@@ -19,8 +19,6 @@
             </a>
             <nav class="flex gap-md">
                 <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.app_name == 'core' and request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
-                <a href="{% url 'core:projects' %}" class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Projects</a>
-                <a href="{% url 'core:learn_index' %}" class="nav-link {% if 'learn' in request.resolver_match.url_name %}active{% endif %}">Learn</a>
                 <a href="{% url 'voxelengine:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelengine' %}active{% endif %}">VoxelEngine</a>
                 <a href="{% url 'voxelgames:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelgames' %}active{% endif %}">VoxelGames</a>
             </nav>

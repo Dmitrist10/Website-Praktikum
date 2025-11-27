@@ -5,87 +5,125 @@
 
 {% block core_content %}
 
-<section class="hero" id="core-index-section-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static 'img/hero_bg.png' %}'); background-size: cover; background-position: center;">
+<!-- Hero Section -->
+<section class="hero" id="core-index-section-hero">
     <div class="container">
-        <div class="hero-content text-center">
-            <span class="badge mb-md">EST. 2025</span>
+        <div class="hero-content">
+            <span class="badge" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border-color: rgba(99, 102, 241, 0.4);">STUDIO</span>
             <h1 class="hero-title">
-                DarkSecret Studios <br>
-                <span class="text-gradient">The Foundation for Virtual Worlds</span>
+                DarkSecret <span style="color: var(--color-accent);">Studios</span>
             </h1>
-            <p class="hero-subtitle mx-auto text-lg opacity-80">
-                We build the next generation of volumetric technology, empowering millions of developers and players to create without limits.
+            <p class="hero-subtitle">
+                Pushing the boundaries of voxel technology and gaming. We build the engine, the games, and the future.
             </p>
-            <div class="flex gap-md justify-center mt-lg">
-                <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Explore Technology</a>
-                <a href="{% url 'voxelengine:index' %}" class="btn btn-outline">Visit Platform</a>
+            <div class="flex gap-md">
+                <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Our Games</a>
+                <a href="{% url 'voxelengine:index' %}" class="btn btn-secondary">Get the Engine</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section bg-alt">
+<!-- About Us Section -->
+<section class="section">
     <div class="container">
-        <div class="grid grid-2 items-center gap-xl">
-            <div>
-                <h2>About Us</h2>
-                <p class="text-lg">DarkSecret Studios is a pioneer in voxel-based rendering technology. We believe that the future of gaming lies in true volumetric freedom.</p>
-                <p>Founded in 2025, our mission is to democratize game development by providing tools that are powerful enough for professionals yet accessible to everyone.</p>
-                <a href="#" class="btn btn-secondary mt-md">Read Our Story</a>
+        <div class="text-center mb-xl">
+            <h2>About Us</h2>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">
+                We make your game ideas come to life with our VoxelEngine and VoxelGames platforms.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Our Innovations Section -->
+<section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+        <div class="flex justify-between items-center mb-md">
+            <h2>Our Innovations</h2>
+        </div>
+        <div class="grid grid-3">
+            <div class="card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🚀</div>
+                <h3>Voxel Engine</h3>
+                <p>A high-performance, custom-built engine designed for massive voxel worlds and real-time editing.</p>
             </div>
-            <div class="card glass-effect">
-                <h3>Our Vision</h3>
-                <p>"To create a universe where every pixel is a building block for your imagination."</p>
-                <div class="mt-md flex items-center gap-sm">
-                    <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%;"></div>
-                    <div>
-                        <strong>Jane Doe</strong><br>
-                        <small class="text-muted">CEO & Founder</small>
-                    </div>
+            <div class="card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚛️</div>
+                <h3>Physics System</h3>
+                <p>Advanced rigid body physics and collision detection tailored for block-based environments.</p>
+            </div>
+            <div class="card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌐</div>
+                <h3>Networking</h3>
+                <p>Seamless multiplayer architecture with authoritative server logic and instant replication.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Showcases Section -->
+<section class="section">
+    <div class="container">
+        <div class="flex justify-between items-center mb-md">
+            <h2>Made with Our Engine</h2>
+            <a href="{% url 'voxelgames:index' %}" class="btn btn-outline">View All Games</a>
+        </div>
+        <div class="grid grid-3">
+            <!-- Showcase 1 -->
+            <div class="card">
+                <div style="height: 180px; background: #333; border-radius: var(--radius-md); margin-bottom: var(--space-sm); overflow: hidden;">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e293b, #3b82f6);"></div>
+                </div>
+                <h3>Voxel Arena</h3>
+                <p>Fast-paced multiplayer shooter.</p>
+            </div>
+            <!-- Showcase 2 -->
+            <div class="card">
+                <div style="height: 180px; background: #333; border-radius: var(--radius-md); margin-bottom: var(--space-sm); overflow: hidden;">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #3f2c2c, #ef4444);"></div>
+                </div>
+                <h3>Block Racer</h3>
+                <p>High-octane racing on custom tracks.</p>
+            </div>
+            <!-- Showcase 3 -->
+            <div class="card">
+                <div style="height: 180px; background: #333; border-radius: var(--radius-md); margin-bottom: var(--space-sm); overflow: hidden;">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #14532d, #22c55e);"></div>
+                </div>
+                <h3>Sky Survival</h3>
+                <p>Survive and thrive in the clouds.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+        <div class="flex justify-between items-center mb-md">
+            <h2>Latest News</h2>
+            <a href="{% url 'core:news' %}" class="btn btn-outline">Read More</a>
+        </div>
+        <div class="grid grid-2">
+            <div class="card flex gap-md items-start">
+                <div style="width: 100px; height: 100px; background: #333; border-radius: var(--radius-md); flex-shrink: 0;"></div>
+                <div>
+                    <span class="badge" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">Update</span>
+                    <h3 style="margin-top: 0.5rem; font-size: 1.25rem;">Engine 2.0 Released</h3>
+                    <p style="font-size: 0.9rem;">Major performance improvements and new rendering pipeline.</p>
+                </div>
+            </div>
+            <div class="card flex gap-md items-start">
+                <div style="width: 100px; height: 100px; background: #333; border-radius: var(--radius-md); flex-shrink: 0;"></div>
+                <div>
+                    <span class="badge" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">Community</span>
+                    <h3 style="margin-top: 0.5rem; font-size: 1.25rem;">Creator Contest Winners</h3>
+                    <p style="font-size: 0.9rem;">Check out the amazing creations from our latest jam.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<section class="section">
-    <div class="container">
-        <div class="text-center mb-lg">
-            <h2>Our Innovations</h2>
-            <p>Making your virtual world possible with cutting-edge tech.</p>
-        </div>
-
-        <div class="grid grid-3">
-            <div class="card hover-lift">
-                <div class="icon-box mb-md">🚀</div>
-                <h3>VoxelEngine</h3>
-                <p>High-performance volumetric rendering engine designed for massive scale and interactivity.</p>
-                <a href="{% url 'voxelengine:index' %}" class="text-primary font-bold mt-sm block">Learn More &rarr;</a>
-            </div>
-            <div class="card hover-lift">
-                <div class="icon-box mb-md">🎮</div>
-                <h3>VoxelGames</h3>
-                <p>A community-powered arcade where players can build, share, and play instantly.</p>
-                <a href="{% url 'voxelgames:index' %}" class="text-primary font-bold mt-sm block">Play Now &rarr;</a>
-            </div>
-            <div class="card hover-lift">
-                <div class="icon-box mb-md">☁️</div>
-                <h3>Cloud Sync</h3>
-                <p>Seamlessly sync your worlds across devices with our distributed cloud architecture.</p>
-                <span class="text-muted mt-sm block">Coming Soon</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .mx-auto { margin-left: auto; margin-right: auto; }
-    .bg-alt { background-color: var(--color-bg-alt); }
-    .text-lg { font-size: 1.125rem; margin-bottom: 1rem; }
-    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .hover-lift:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .icon-box { font-size: 2.5rem; }
-    .glass-effect { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-</style>
 
 {% endblock %}

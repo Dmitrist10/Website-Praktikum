@@ -137,8 +137,7 @@ LOGOUT_REDIRECT_URL = '/'
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'test@darksecretstudios.com'
 # EMAIL_HOST_PASSWORD = 'your-password'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_FILE_PATH = '/tmp/django-emails' 
+
 
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -157,12 +156,24 @@ SOCIALACCOUNT_PROVIDERS = {
             'secret': os.getenv('GOOGLE_SECRET'),
             # 'key': ''
         },
-        'OAUTH_PKCE_ENABLED': True,
+        'OAUTH_PKCE_ENABLED': False,
     }
 }
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT', 465))
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', True)
+# EMAIL_USE_SSL = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_FILE_PATH = '/tmp/django-emails' 
+
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
