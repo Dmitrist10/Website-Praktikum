@@ -3,25 +3,70 @@
 {% block core_content %}
 <section class="section">
     <div class="container">
-        <h1 class="text-center mb-md">Privacy Policy</h1>
-        <div class="card p-lg">
-            <p class="mb-md">Last Updated: Nov 27, 2025</p>
+        <h1 class="text-center mb-lg">Privacy Policy</h1>
+        <div class="card p-lg legal-doc">
+            <p class="mb-md text-muted">Last Updated: Nov 27, 2025</p>
             
-            <h3>1. Information We Collect</h3>
-            <p>We collect information you provide directly to us, such as when you create an account, update your profile, or communicate with us.</p>
+            <h3 class="mt-lg">1. Introduction</h3>
+            <p>DarkSecret Studios ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our Services.</p>
 
-            <h3>2. How We Use Information</h3>
-            <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions and send you related information.</p>
+            <h3 class="mt-lg">2. Information We Collect</h3>
+            <p>We may collect information about you in a variety of ways. The information we may collect includes:</p>
+            <ul class="list-disc ml-md mt-sm mb-md">
+                <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, and password, that you voluntarily give to us when you register with the Services.</li>
+                <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Services, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Services.</li>
+                <li><strong>Financial Data:</strong> Financial information, such as data related to your payment method (e.g., valid credit card number, card brand, expiration date) that we may collect when you purchase, order, return, exchange, or request information about our services from the Services.</li>
+            </ul>
 
-            <h3>3. Data Security</h3>
-            <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access.</p>
+            <h3 class="mt-lg">3. How We Use Your Information</h3>
+            <p>We may use the information we collect from you to:</p>
+            <ul class="list-disc ml-md mt-sm mb-md">
+                <li>Create and manage your account.</li>
+                <li>Process your transactions and send you related information, including purchase confirmations and invoices.</li>
+                <li>Send you technical notices, updates, security alerts, and support and administrative messages.</li>
+                <li>Respond to your comments, questions, and requests and provide customer service.</li>
+                <li>Monitor and analyze trends, usage, and activities in connection with our Services.</li>
+            </ul>
 
-            <h3>4. Cookies</h3>
-            <p>We use cookies and similar technologies to collect information about your activity, browser, and device.</p>
+            <h3 class="mt-lg">4. Disclosure of Your Information</h3>
+            <p>We may share information we have collected about you in certain situations. Your information may be disclosed as follows:</p>
+            <ul class="list-disc ml-md mt-sm mb-md">
+                <li><strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</li>
+                <li><strong>Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</li>
+            </ul>
+
+            <h3 class="mt-lg">5. Security of Your Information</h3>
+            <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+
+            <h3 class="mt-lg">6. Policy for Children</h3>
+            <p>We do not knowingly solicit information from or market to children under the age of 13. If you become aware that any data we have collected comes from children under the age of 13, please contact us using the contact information provided below.</p>
+
+            <h3 class="mt-lg">7. Contact Us</h3>
+            <p>If you have questions or comments about this Privacy Policy, please contact us at privacy@darksecretstudios.com.</p>
         </div>
-        <div class="text-center mt-md">
-            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal</a>
+        <div class="text-center mt-xl">
+            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal Hub</a>
         </div>
     </div>
 </section>
+
+<style>
+    .legal-doc {
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+    .legal-doc h3 {
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+    .list-disc {
+        list-style-type: disc;
+    }
+    .ml-md {
+        margin-left: 1.5rem;
+    }
+    .mt-lg {
+        margin-top: 2rem;
+    }
+</style>
 {% endblock %}

@@ -3,25 +3,70 @@
 {% block core_content %}
 <section class="section">
     <div class="container">
-        <h1 class="text-center mb-md">Terms of Service</h1>
-        <div class="card p-lg">
-            <p class="mb-md">Last Updated: Nov 27, 2025</p>
+        <h1 class="text-center mb-lg">Terms of Service</h1>
+        <div class="card p-lg legal-doc">
+            <p class="mb-md text-muted">Last Updated: Nov 27, 2025</p>
             
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing and using the services provided by DarkSecret Studios, you agree to be bound by these Terms of Service.</p>
+            <h3 class="mt-lg">1. Acceptance of Terms</h3>
+            <p>By accessing and using the services provided by DarkSecret Studios ("we," "us," or "our"), including but not limited to VoxelEngine, VoxelGames, and our website (collectively, the "Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use our Services.</p>
 
-            <h3>2. User Accounts</h3>
-            <p>You are responsible for maintaining the security of your account and password. DarkSecret Studios cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.</p>
+            <h3 class="mt-lg">2. User Accounts</h3>
+            <p>To access certain features of our Services, you may be required to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
 
-            <h3>3. Content Ownership</h3>
-            <p>You retain all rights to the content you create using our VoxelEngine. However, by uploading content to VoxelGames, you grant us a worldwide, non-exclusive license to host and display that content.</p>
+            <h3 class="mt-lg">3. User Content</h3>
+            <p>Our Services may allow you to create, upload, post, send, receive, and store content, such as game assets, voxel models, and forum posts ("User Content"). You retain ownership of your User Content. However, by making User Content available through the Services, you grant us a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to use, reproduce, distribute, prepare derivative works of, display, and perform the User Content in connection with the Services.</p>
 
-            <h3>4. Termination</h3>
-            <p>We reserve the right to suspend or terminate your account at any time for violation of these terms.</p>
+            <h3 class="mt-lg">4. Acceptable Use</h3>
+            <p>You agree not to use the Services for any illegal or unauthorized purpose. You agree not to:</p>
+            <ul class="list-disc ml-md mt-sm mb-md">
+                <li>Violate any applicable laws or regulations.</li>
+                <li>Infringe upon the rights of others, including intellectual property rights.</li>
+                <li>Harass, abuse, or harm another person or group.</li>
+                <li>Interfere with or disrupt the integrity or performance of the Services.</li>
+                <li>Attempt to gain unauthorized access to the Services or related systems.</li>
+            </ul>
+
+            <h3 class="mt-lg">5. Intellectual Property</h3>
+            <p>The Services, including their text, graphics, images, code, and other material, are owned by DarkSecret Studios or our licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+
+            <h3 class="mt-lg">6. Termination</h3>
+            <p>We reserve the right to suspend or terminate your access to the Services at any time, with or without cause, and with or without notice.</p>
+
+            <h3 class="mt-lg">7. Disclaimer of Warranties</h3>
+            <p>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+
+            <h3 class="mt-lg">8. Limitation of Liability</h3>
+            <p>IN NO EVENT SHALL DARKSECRET STUDIOS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICES.</p>
+
+            <h3 class="mt-lg">9. Changes to Terms</h3>
+            <p>We may modify these Terms at any time. We will provide notice of any material changes by posting the new Terms on our website. Your continued use of the Services after the effective date of the new Terms constitutes your acceptance of the changes.</p>
+
+            <h3 class="mt-lg">10. Contact Us</h3>
+            <p>If you have any questions about these Terms, please contact us at legal@darksecretstudios.com.</p>
         </div>
-        <div class="text-center mt-md">
-            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal</a>
+        <div class="text-center mt-xl">
+            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal Hub</a>
         </div>
     </div>
 </section>
+
+<style>
+    .legal-doc {
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+    .legal-doc h3 {
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+    .list-disc {
+        list-style-type: disc;
+    }
+    .ml-md {
+        margin-left: 1.5rem;
+    }
+    .mt-lg {
+        margin-top: 2rem;
+    }
+</style>
 {% endblock %}

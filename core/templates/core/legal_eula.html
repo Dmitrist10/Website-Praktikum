@@ -3,25 +3,70 @@
 {% block core_content %}
 <section class="section">
     <div class="container">
-        <h1 class="text-center mb-md">End User License Agreement (EULA)</h1>
-        <div class="card p-lg">
-            <p class="mb-md">Last Updated: Nov 27, 2025</p>
+        <h1 class="text-center mb-lg">End User License Agreement (EULA)</h1>
+        <div class="card p-lg legal-doc">
+            <p class="mb-md text-muted">Last Updated: Nov 27, 2025</p>
             
-            <h3>1. Grant of License</h3>
-            <p>DarkSecret Studios grants you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application strictly in accordance with the terms of this Agreement.</p>
+            <h3 class="mt-lg">1. Agreement</h3>
+            <p>This End User License Agreement ("Agreement") is a binding legal agreement between you ("End User" or "you") and DarkSecret Studios ("Company," "we," "us," or "our"). This Agreement governs your use of the VoxelEngine software and any associated documentation (collectively, the "Application"). The Application is licensed, not sold, to you.</p>
 
-            <h3>2. Restrictions</h3>
-            <p>You agree not to, and you will not permit others to: license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose, or otherwise commercially exploit the Application.</p>
+            <h3 class="mt-lg">2. License Grant</h3>
+            <p>Subject to the terms of this Agreement, DarkSecret Studios grants you a limited, non-exclusive, and non-transferable license to:</p>
+            <ul class="list-disc ml-md mt-sm mb-md">
+                <li>Download, install, and use the Application for your personal, non-commercial use on a single mobile device or computer owned or otherwise controlled by you.</li>
+                <li>Access and use the Application on such device strictly in accordance with the terms of this Agreement.</li>
+            </ul>
 
-            <h3>3. Modifications to Application</h3>
-            <p>DarkSecret Studios reserves the right to modify, suspend, or discontinue, temporarily or permanently, the Application or any service to which it connects, with or without notice and without liability to you.</p>
+            <h3 class="mt-lg">3. License Restrictions</h3>
+            <p>You agree not to, and you will not permit others to:</p>
+            <ul class="list-disc ml-md mt-sm mb-md">
+                <li>License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose, or otherwise commercially exploit the Application or make the Application available to any third party.</li>
+                <li>Copy or use the Application for any purpose other than as permitted under the above section 'License Grant'.</li>
+                <li>Modify, make derivative works of, disassemble, decrypt, reverse compile, or reverse engineer any part of the Application.</li>
+                <li>Remove, alter, or obscure any proprietary notice (including any notice of copyright or trademark) of DarkSecret Studios or its affiliates, partners, suppliers, or the licensors of the Application.</li>
+            </ul>
 
-            <h3>4. Term and Termination</h3>
-            <p>This Agreement shall remain in effect until terminated by you or DarkSecret Studios.</p>
+            <h3 class="mt-lg">4. Intellectual Property</h3>
+            <p>The Application, including without limitation all copyrights, patents, trademarks, trade secrets, and other intellectual property rights, are, and shall remain, the sole and exclusive property of DarkSecret Studios.</p>
+
+            <h3 class="mt-lg">5. Updates to Application</h3>
+            <p>DarkSecret Studios may from time to time provide enhancements or improvements to the features/functionality of the Application, which may include patches, bug fixes, updates, upgrades, and other modifications ("Updates"). Updates may modify or delete certain features and/or functionalities of the Application. You agree that DarkSecret Studios has no obligation to (i) provide any Updates, or (ii) continue to provide or enable any particular features and/or functionalities of the Application to you.</p>
+
+            <h3 class="mt-lg">6. Term and Termination</h3>
+            <p>This Agreement shall remain in effect until terminated by you or DarkSecret Studios. We may, in our sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice. This Agreement will terminate immediately, without prior notice from DarkSecret Studios, in the event that you fail to comply with any provision of this Agreement. Upon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or computer.</p>
+
+            <h3 class="mt-lg">7. Disclaimer of Warranty</h3>
+            <p>THE APPLICATION IS PROVIDED TO YOU "AS IS" AND "AS AVAILABLE" AND WITH ALL FAULTS AND DEFECTS WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, DARKSECRET STUDIOS, ON ITS OWN BEHALF AND ON BEHALF OF ITS AFFILIATES AND ITS AND THEIR RESPECTIVE LICENSORS AND SERVICE PROVIDERS, EXPRESSLY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, WITH RESPECT TO THE APPLICATION.</p>
+
+            <h3 class="mt-lg">8. Limitation of Liability</h3>
+            <p>NOTWITHSTANDING ANY DAMAGES THAT YOU MIGHT INCUR, THE ENTIRE LIABILITY OF DARKSECRET STUDIOS AND ANY OF ITS SUPPLIERS UNDER ANY PROVISION OF THIS AGREEMENT AND YOUR EXCLUSIVE REMEDY FOR ALL OF THE FOREGOING SHALL BE LIMITED TO THE AMOUNT ACTUALLY PAID BY YOU FOR THE APPLICATION.</p>
+
+            <h3 class="mt-lg">9. Contact Information</h3>
+            <p>If you have any questions about this Agreement, please contact us at legal@darksecretstudios.com.</p>
         </div>
-        <div class="text-center mt-md">
-            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal</a>
+        <div class="text-center mt-xl">
+            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal Hub</a>
         </div>
     </div>
 </section>
+
+<style>
+    .legal-doc {
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+    .legal-doc h3 {
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+    .list-disc {
+        list-style-type: disc;
+    }
+    .ml-md {
+        margin-left: 1.5rem;
+    }
+    .mt-lg {
+        margin-top: 2rem;
+    }
+</style>
 {% endblock %}
