@@ -1,0 +1,27 @@
+{% extends 'core/coreBase.html' %}
+
+{% block core_content %}
+<section class="section">
+    <div class="container">
+        <h1 class="text-center mb-md">End User License Agreement (EULA)</h1>
+        <div class="card p-lg">
+            <p class="mb-md">Last Updated: Nov 27, 2025</p>
+            
+            <h3>1. Grant of License</h3>
+            <p>DarkSecret Studios grants you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application strictly in accordance with the terms of this Agreement.</p>
+
+            <h3>2. Restrictions</h3>
+            <p>You agree not to, and you will not permit others to: license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose, or otherwise commercially exploit the Application.</p>
+
+            <h3>3. Modifications to Application</h3>
+            <p>DarkSecret Studios reserves the right to modify, suspend, or discontinue, temporarily or permanently, the Application or any service to which it connects, with or without notice and without liability to you.</p>
+
+            <h3>4. Term and Termination</h3>
+            <p>This Agreement shall remain in effect until terminated by you or DarkSecret Studios.</p>
+        </div>
+        <div class="text-center mt-md">
+            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

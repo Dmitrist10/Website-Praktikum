@@ -1,0 +1,27 @@
+{% extends 'core/coreBase.html' %}
+
+{% block core_content %}
+<section class="section">
+    <div class="container">
+        <h1 class="text-center mb-md">Terms of Service</h1>
+        <div class="card p-lg">
+            <p class="mb-md">Last Updated: Nov 27, 2025</p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing and using the services provided by DarkSecret Studios, you agree to be bound by these Terms of Service.</p>
+
+            <h3>2. User Accounts</h3>
+            <p>You are responsible for maintaining the security of your account and password. DarkSecret Studios cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.</p>
+
+            <h3>3. Content Ownership</h3>
+            <p>You retain all rights to the content you create using our VoxelEngine. However, by uploading content to VoxelGames, you grant us a worldwide, non-exclusive license to host and display that content.</p>
+
+            <h3>4. Termination</h3>
+            <p>We reserve the right to suspend or terminate your account at any time for violation of these terms.</p>
+        </div>
+        <div class="text-center mt-md">
+            <a href="{% url 'core:legal' %}" class="btn btn-outline">&larr; Back to Legal</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

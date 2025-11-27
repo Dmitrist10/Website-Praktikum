@@ -9,3 +9,12 @@ def news_view(request):
 
 def legal_view(request):
     return render(request, 'core/legal.html')
+
+def legal_terms_view(request):
+    return render(request, 'core/legal_terms.html')
+
+def legal_privacy_view(request):
+    return render(request, 'core/legal_privacy.html')
+
+def legal_eula_view(request):
+    return render(request, 'core/legal_eula.html')
