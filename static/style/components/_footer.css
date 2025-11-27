@@ -1,0 +1,31 @@
+/* --- Footer --- */
+.footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-lg) 0;
+    background-color: var(--color-bg-alt);
+    margin-top: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    color: var(--color-text-muted);
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-primary);
+}

@@ -1,0 +1,45 @@
+{% extends 'voxelengine/veBase.html' %}
+
+{% block voxelengine_content %}
+<section class="section">
+    <div class="container">
+        <h1 class="text-center mb-md">Plans & Pricing</h1>
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <h3>Indie</h3>
+                <div style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">Free</div>
+                <p>Perfect for hobbyists and small teams.</p>
+                <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
+                    <li>Full Engine Access</li>
+                    <li>Community Support</li>
+                    <li>< $100k Revenue</li>
+                </ul>
+                <a href="#" class="btn btn-outline w-full">Get Started</a>
+            </div>
+            <div class="card text-center" style="border-color: var(--color-primary); box-shadow: var(--shadow-neon);">
+                <span class="badge" style="background: var(--color-primary); color: white; border: none;">RECOMMENDED</span>
+                <h3>Pro</h3>
+                <div style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">$29<span style="font-size: 1rem; font-weight: 400;">/mo</span></div>
+                <p>For professional developers.</p>
+                <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
+                    <li>Priority Support</li>
+                    <li>Cloud Build Service</li>
+                    <li>Advanced Profiling</li>
+                </ul>
+                <a href="#" class="btn btn-primary w-full">Subscribe</a>
+            </div>
+            <div class="card text-center">
+                <h3>Enterprise</h3>
+                <div style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">Custom</div>
+                <p>For large studios and custom needs.</p>
+                <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
+                    <li>Dedicated Support Engineer</li>
+                    <li>Source Code Access</li>
+                    <li>Custom Features</li>
+                </ul>
+                <a href="#" class="btn btn-outline w-full">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

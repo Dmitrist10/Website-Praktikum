@@ -1,0 +1,66 @@
+/* Auth Container */
+.auth-container {
+    max-width: 900px;
+    /* Increased from 600px */
+    margin: var(--space-xl) auto;
+    padding: var(--space-md);
+    width: 100%;
+}
+
+/* Rainbow Background */
+.rainbow-bg {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg,
+            hsl(341, 81%, 51%) 0%,
+            hsl(280, 75%, 45%) 25%,
+            hsl(220, 87%, 49%) 50%,
+            hsl(172, 81%, 52%) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 45%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 45%;
+    }
+}
+
+/* Glass Panel */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    padding: 4rem 3rem;
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+}
+
+.glass-panel h1 {
+    font-size: 3.5rem;
+    /* Slightly adjusted for better fit */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.glass-panel p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}

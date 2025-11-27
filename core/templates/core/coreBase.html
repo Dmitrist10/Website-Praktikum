@@ -2,6 +2,16 @@
 
 {% block content %}
 
+<!-- Secondary Navigation Panel -->
+<div class="sub-navbar" style="background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border); padding: 0.5rem 0;">
+    <div class="container flex justify-center gap-md">
+        <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+        <a href="{% url 'core:news' %}" class="nav-link {% if request.resolver_match.url_name == 'news' %}active{% endif %}">News</a>
+        <a href="#" class="nav-link">Career</a>
+        <a href="{% url 'core:legal' %}" class="nav-link {% if request.resolver_match.url_name == 'legal' %}active{% endif %}">Legal</a>
+    </div>
+</div>
+
 {% block core_content %}
 {% endblock %}
 

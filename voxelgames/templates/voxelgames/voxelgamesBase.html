@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 
-{% block global_theme %}darktheme voxelgames{% endblock %}
+{% block theme_name %}gaming{% endblock %}
 
 {% block content %}
+
+<!-- Secondary Navigation Panel -->
+<div class="sub-navbar" style="background: rgba(10, 10, 11, 0.9); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.5rem 0; backdrop-filter: blur(10px);">
+    <div class="container flex justify-center gap-md">
+        <a href="{% url 'voxelgames:index' %}" class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+        <a href="{% url 'voxelgames:store' %}" class="nav-link {% if request.resolver_match.url_name == 'store' %}active{% endif %}">Store</a>
+        <a href="#" class="nav-link">Library</a>
+        <a href="#" class="nav-link">Friends</a>
+        <a href="#" class="nav-link">Subscriptions</a>
+    </div>
+</div>
 
 {% block voxelgames_content %}
 {% endblock %}

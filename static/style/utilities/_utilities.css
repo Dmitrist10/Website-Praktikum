@@ -1,0 +1,67 @@
+/* =========================================
+   UTILITIES
+   ========================================= */
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-md {
+    margin-top: var(--space-md);
+}
+
+.mb-md {
+    margin-bottom: var(--space-md);
+}
+
+.mt-sm {
+    margin-top: var(--space-sm);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.opacity-70 {
+    opacity: 0.7;
+}
+
+.opacity-80 {
+    opacity: 0.8;
+}
+
+.my-md {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+}

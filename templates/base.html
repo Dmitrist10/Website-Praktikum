@@ -6,65 +6,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Site{% endblock %}</title>
+    <title>{% block title %}DarkSecret Studios{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="{% block global_theme %}{% endblock %}">
+<body data-theme="{% block theme_name %}core{% endblock %}">
 
-    <header id="global-header">
-        <div id="global-header-left">
-            <a href="{% url 'core:index' %}" class="Logo">
-                <i class="icon_logo"></i>
+    <header class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="{% url 'core:index' %}" class="nav-brand">
                 DarkSecret
             </a>
-        </div>
-        <nav>
-            <a href="{% url 'core:index' %}" class="active">Home</a>
-            <a href="{% url 'voxelengine:index' %}">VoxelEngine</a>
-            <a href="{% url 'voxelgames:index' %}">VoxelGames</a>
-        </nav>
-        <div id="global-header-right">
-            {% if user.is_authenticated %}
-                <a href="{% url 'account_logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'account_login' %}">Login</a>
-            {% endif %}
+            <nav class="flex gap-md">
+                <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.app_name == 'core' %}active{% endif %}">Home</a>
+                <a href="{% url 'voxelengine:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelengine' %}active{% endif %}">VoxelEngine</a>
+                <a href="{% url 'voxelgames:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelgames' %}active{% endif %}">VoxelGames</a>
+            </nav>
+            <div class="flex gap-sm">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'account_logout' %}" class="btn btn-outline">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+                {% endif %}
+            </div>
         </div>
     </header>
-    <main id="global-main">
+    <main class="global-main">
         {% block content %}{% endblock %}
     </main>
 
-    <footer id="global-footer">
-        <p>&copy; 2025 DarkSecretStudios. All rights reserved.</p>
-        <div id="global-footer-companyInfo">
-            <div id="company-logo">
-                {% comment %} <h1 class="Logo">
-                    DarkSecretStudios
-                </h1> {% endcomment %}
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="nav-brand">DarkSecret</h4>
+                    <p>&copy; 2025 DarkSecretStudios.<br>All rights reserved.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="{% url 'core:index' %}">Home</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">VoxelEngine</a></li>
+                        <li><a href="{% url 'voxelgames:index' %}">VoxelGames</a></li>
+                        <li><a href="#">My Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">EULA</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <nav>
-            <!-- Links -->
-            <div id="abc">
-                 <h2>Company</h2>
-                <a href="{% url 'core:index' %}">Home</a>
-                <a href="#">News</a>
-                {% comment %} <a href="{% url 'accounts:index' %}">Account</a> {% endcomment %}
-             </div>
-             <div id="def">
-                 <h2>Services</h2>
-                 <a href="#">VoxelEngine</a>
-                 <a href="{% url 'voxelgames:index' %}">VoxelGames</a>
-                 <a href="#">My Projects</a>
-             </div>
-             <div>
-                <h2>Legal</h2>
-                <a href="#">Terms of Service</a>
-                <a href="#">Eula</a>
-                <a href="#">Privacy policy</a>
-             </div>
-        </nav>
     </footer>
 
 </body>

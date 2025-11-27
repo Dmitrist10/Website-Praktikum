@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
 
-{% block global_theme %}darktheme voxelengine{% endblock %}
+{% block theme_name %}engine{% endblock %}
 
 {% block content %}
+
+<!-- Secondary Navigation Panel -->
+<div class="sub-navbar" style="background: rgba(10, 10, 11, 0.9); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.5rem 0; backdrop-filter: blur(10px);">
+    <div class="container flex justify-center gap-md">
+        <a href="{% url 'voxelengine:index' %}" class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+        <a href="{% url 'voxelengine:download' %}" class="nav-link {% if request.resolver_match.url_name == 'download' %}active{% endif %}">Download</a>
+        <a href="{% url 'voxelengine:subscriptions' %}" class="nav-link {% if request.resolver_match.url_name == 'subscriptions' %}active{% endif %}">Subscriptions</a>
+        <a href="#" class="nav-link">News</a>
+        <a href="#" class="nav-link">Docs</a>
+        <a href="#" class="nav-link">Showcase</a>
+    </div>
+</div>
 
 {% block voxelengine_content %}
 {% endblock %}

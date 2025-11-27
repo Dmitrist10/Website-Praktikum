@@ -5,74 +5,59 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block auth_content %}
-<h1 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">{% trans "Sign In" %}</h1>
+<div class="rainbow-bg">
+    <div class="auth-container">
+        <div class="glass-panel">
+            <h1 class="text-center mb-md">{% trans "Sign In" %}</h1>
 
-{% get_providers as socialaccount_providers %}
+            {% get_providers as socialaccount_providers %}
 
-{% if socialaccount_providers %}
-<div class="socialaccount_ballot">
-  <ul class="socialaccount_providers" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-  <div class="login-or" style="text-align: center; margin: 1rem 0; opacity: 0.7;">{% trans 'or' %}</div>
-</div>
+            {% if socialaccount_providers %}
+            <div class="socialaccount_ballot">
+                <ul class="socialaccount_providers flex flex-col gap-sm">
+                    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                </ul>
+                <div class="login-or text-center my-md opacity-70">{% trans 'or' %}</div>
+            </div>
 
-{% include "socialaccount/snippets/login_extra.html" %}
+            {% include "socialaccount/snippets/login_extra.html" %}
 
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
+            {% else %}
+            <p class="text-center mb-md">{% blocktrans %}If you have not created an account yet, then please
+            <a href="{{ signup_url }}" class="text-primary hover:underline">sign up</a> first.{% endblocktrans %}</p>
+            {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}" style="display: flex; flex-direction: column; gap: 1rem;">
-  {% csrf_token %}
-  
-  {% for field in form %}
-    <div class="form-group">
-        <label for="{{ field.id_for_label }}" style="display: block; margin-bottom: 0.5rem;">{{ field.label }}</label>
-        {{ field }}
-        {% if field.help_text %}
-        <small style="display: block; opacity: 0.7; margin-top: 0.25rem;">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-        <small style="color: #ff6b6b; display: block; margin-top: 0.25rem;">{{ error }}</small>
-        {% endfor %}
+            <form class="login flex flex-col gap-sm" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}" class="block mb-xs font-medium">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}
+                        <small class="block opacity-70 mt-xs">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% for error in field.errors %}
+                        <small class="block text-error mt-xs">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                
+                <button class="primaryAction btn btn-primary w-full mt-md" type="submit">{% trans "Sign In" %}</button>
+                
+                <div class="text-center mt-md flex flex-col gap-sm">
+                    <a class="button secondaryAction text-sm opacity-80 hover:opacity-100 transition" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                    <div>
+                        <span class="opacity-70">Don't have an account?</span> 
+                        <a href="{{ signup_url }}" class="text-primary font-bold hover:underline">Sign Up</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  {% endfor %}
-
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  
-  <button class="primaryAction" type="submit" style="margin-top: 1rem; padding: 0.75rem; background: var(--accent-primary); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">{% trans "Sign In" %}</button>
-  
-  <div style="text-align: center; margin-top: 1rem;">
-      <a class="button secondaryAction" href="{% url 'account_reset_password' %}" style="font-size: 0.9rem; opacity: 0.8;">{% trans "Forgot Password?" %}</a>
-  </div>
-  <div style="text-align: center; margin-top: 0.5rem;">
-      <span style="opacity: 0.7;">Don't have an account?</span> <a href="{{ signup_url }}" style="color: var(--accent-primary);">Sign Up</a>
-  </div>
-</form>
-
-<style>
-    .form-group input {
-        width: 100%;
-        padding: 0.75rem;
-        border-radius: 5px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(0, 0, 0, 0.2);
-        color: white;
-    }
-    .socialaccount_providers a {
-        display: block;
-        width: 100%;
-        padding: 0.75rem;
-        background: white;
-        color: black;
-        text-align: center;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 500;
-    }
-</style>
+</div>
 {% endblock %}

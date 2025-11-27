@@ -1,50 +1,47 @@
 {% extends 'core/coreBase.html' %}
 
+{% block theme_name %}core{% endblock %}
+
 {% block core_content %}
 
-<main class="main-container" id="core-index-sections-main" >
-
-    <section class="main-section section-hero" id="core-index-section-hero" >
-
-        <div class="hero-content" id="core-index-hero-content" >
-            <p class="overTitle">est. 2025</p>
-            <h1 class="section-title" id="core-index-hero-title" >
-                DarkSecretStudios<br>
-                the foundation for virtual worlds
+<section class="hero" id="core-index-section-hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="badge">EST. 2025</span>
+            <h1 class="hero-title">
+                The foundation for<br>virtual worlds.
             </h1>
-            <p class="section-subtitle" id="core-index-hero-subtitle" >
-                We build the next generation of virtual worlds. <br>
-                empowering millions of developers<br>
-                and players to create any thing<br>
-                they want without any limits<br>
-                 and knowledge.
+            <p class="hero-subtitle">
+                We build the next generation of volumetric technology, empowering millions of developers and players to create without limits.
             </p>
-            <div class ="buttons">
-                <a href="#" class="btn btn-primary">VoxelWorld</a>
-                <a href="#" class="btn btn-secondary">Engine</a>
+            <div class="flex gap-md">
+                <a href="{% url 'voxelgames:index' %}" class="btn btn-primary">Explore Technology</a>
+                <a href="{% url 'voxelengine:index' %}" class="btn btn-outline">Visit Platform</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="main-section" id="core-index-section-products">
-        <div class="main-content" id="core-index-section-products-content">
-            <h1>Our Inovations</h1>
-            <p>This is a test</p>
+<section class="section">
+    <div class="container">
+        <div class="text-center mb-md">
+            <h2>Our Innovations</h2>
+            <p>Pioneering the future of digital interaction.</p>
+        </div>
 
-            <div class="grid">
-                <div class="grid-card core-products-card">
-                    <h1>VoxelEngine</h1>
-                    <p>tehte</p>
-                </div>
-                <div class="grid-card core-products-card">
-                    <i></i>
-                    <h1>VoxelGames</h1>
-                    <p>tehteregreg</p>
-                </div>
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>VoxelEngine</h3>
+                <p>High-performance volumetric rendering engine designed for massive scale and interactivity.</p>
+                <a href="{% url 'voxelengine:index' %}" class="btn btn-outline mt-md">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>VoxelGames</h3>
+                <p>A community-powered arcade where players can build, share, and play instantly.</p>
+                <a href="{% url 'voxelgames:index' %}" class="btn btn-outline mt-md">Play Now</a>
             </div>
         </div>
-    </section>
-
-</main>
+    </div>
+</section>
 
 {% endblock %}

@@ -1,0 +1,14 @@
+/* Core Index Hero Background */
+#core-index-section-hero {
+    background-image: radial-gradient(circle at 80% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+}
+
+/* Gaming Index Hero Background */
+#voxelgames-index-section-hero {
+    background: radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.15) 0%, transparent 70%);
+}
+
+/* Engine Index Hero Background */
+#voxelengine-index-section-hero {
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}

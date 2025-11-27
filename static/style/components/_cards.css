@@ -1,0 +1,31 @@
+/* --- Cards --- */
+.card {
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+/* Glassmorphism Card (for Gaming/Engine themes) */
+[data-theme="gaming"] .card,
+[data-theme="engine"] .card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="gaming"] .card:hover,
+[data-theme="engine"] .card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-neon);
+}

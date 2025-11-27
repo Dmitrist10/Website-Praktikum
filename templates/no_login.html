@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Access Denied" %}{% endblock %}
+
+{% block content %}
+<div class="rainbow-bg">
+    <div class="glass-panel text-center">
+        <h1>DarkSecret</h1>
+        <p>{% trans "You need to be logged in to access this page." %}</p>
+        
+        <div class="flex justify-center gap-md mt-md">
+            <a href="{% url 'account_login' %}" class="btn btn-primary" style="font-size: 1.2rem; padding: 1rem 2rem;">{% trans "Log In" %}</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1rem 2rem;">{% trans "Sign Up" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
