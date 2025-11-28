@@ -18,7 +18,7 @@
                 DarkSecret
             </a>
             <nav class="flex gap-md">
-                <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.app_name == 'core' and request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+                <a href="{% url 'core:index' %}" class="nav-link {% if request.resolver_match.app_name == 'core' and request.resolver_match.url_name == 'index' %}active{% endif %}">Company</a>
                 <a href="{% url 'voxelengine:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelengine' %}active{% endif %}">VoxelEngine</a>
                 <a href="{% url 'voxelgames:index' %}" class="nav-link {% if request.resolver_match.app_name == 'voxelgames' %}active{% endif %}">VoxelGames</a>
             </nav>

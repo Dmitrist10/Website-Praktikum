@@ -162,12 +162,25 @@ SOCIALACCOUNT_PROVIDERS = {
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT', 465))
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', True)
-# EMAIL_USE_SSL = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+# Automatically configure SSL/TLS based on port
+if EMAIL_PORT == 465:
+    EMAIL_USE_SSL = True
+    EMAIL_USE_TLS = False
+else:
+    EMAIL_USE_SSL = False
+    EMAIL_USE_TLS = True
+
+# Ensure DEFAULT_FROM_EMAIL is a valid email address
+if EMAIL_HOST_USER and '@' not in EMAIL_HOST_USER and 'gmail' in str(EMAIL_HOST):
+    DEFAULT_FROM_EMAIL = f"{EMAIL_HOST_USER}@gmail.com"
+else:
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/django-emails' 
 
 
