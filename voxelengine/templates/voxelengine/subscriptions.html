@@ -7,9 +7,9 @@
         <h1 class="text-center mb-md">Plans &amp; Pricing</h1>
         <div class="grid grid-3">
             <div class="card text-center">
-                <h3>Indie</h3>
+                <h3>Starter</h3>
                 <div style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">Free</div>
-                <p>Perfect for hobbyists and small teams.</p>
+                <p>Perfect for small teams (up to 3)</p>
                 <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
                     <li>Full Engine Access</li>
                     <li>Community Support</li>
@@ -19,13 +19,13 @@
             </div>
             <div class="card text-center" style="border-color: var(--color-primary); box-shadow: var(--shadow-neon);">
                 <span class="badge" style="background: var(--color-primary); color: white; border: none;">RECOMMENDED</span>
-                <h3>Pro</h3>
+                <h3>Premium</h3>
                 <div style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">$29<span style="font-size: 1rem; font-weight: 400;">/mo</span></div>
-                <p>For professional developers.</p>
+                <p>For professional developers and big teams</p>
                 <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
                     <li>Priority Support</li>
-                    <li>Cloud Build Service</li>
-                    <li>Advanced Profiling</li>
+                    <li>Cloud storage</li>
+                    <li>Advanced Features</li>
                 </ul>
                 {% if user|has_group:"engine_premium" %}
                 <a href="#" class="btn btn-primary disabled">Subscribed</a>
@@ -36,9 +36,9 @@
             <div class="card text-center">
                 <h3>Enterprise</h3>
                 <div style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">Custom</div>
-                <p>For large studios and custom needs.</p>
+                <p>For large studios (+20) and custom needs.</p>
                 <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
-                    <li>Dedicated Support Engineer</li>
+                    <li>All Cloud Services</li>
                     <li>Source Code Access</li>
                     <li>Custom Features</li>
                 </ul>
