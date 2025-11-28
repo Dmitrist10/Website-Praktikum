@@ -1,9 +1,10 @@
 {% extends 'voxelengine/veBase.html' %}
+{% load auth_extras %}
 
 {% block voxelengine_content %}
 <section class="section">
     <div class="container">
-        <h1 class="text-center mb-md">Plans & Pricing</h1>
+        <h1 class="text-center mb-md">Plans &amp; Pricing</h1>
         <div class="grid grid-3">
             <div class="card text-center">
                 <h3>Indie</h3>
@@ -12,7 +13,7 @@
                 <ul class="text-left mt-md mb-md" style="list-style: disc; padding-left: 1.5rem;">
                     <li>Full Engine Access</li>
                     <li>Community Support</li>
-                    <li>< $100k Revenue</li>
+                    <li>&lt; $100k Revenue</li>
                 </ul>
                 <a href="#" class="btn btn-outline w-full">Get Started</a>
             </div>
@@ -26,7 +27,11 @@
                     <li>Cloud Build Service</li>
                     <li>Advanced Profiling</li>
                 </ul>
-                <a href="#" class="btn btn-primary w-full">Subscribe</a>
+                {% if user|has_group:"engine_premium" %}
+                <a href="#" class="btn btn-primary disabled">Subscribed</a>
+                {% else %}
+                <a href="{% url 'accounts:subscribe_engine_premium' %}" class="btn btn-primary w-full">Subscribe</a>
+                {% endif %}
             </div>
             <div class="card text-center">
                 <h3>Enterprise</h3>

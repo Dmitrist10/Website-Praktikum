@@ -31,6 +31,7 @@
             {% csrf_token %}
 
             {% for field in form %}
+            {% if field.name != 'remember' %}
             <div class="form-group">
                 <label for="{{ field.id_for_label }}" class="block mb-xs font-medium">{{ field.label }}</label>
                 {{ field }}
@@ -41,6 +42,7 @@
                 <small class="block text-error mt-xs">{{ error }}</small>
                 {% endfor %}
             </div>
+            {% endif %}
             {% endfor %}
 
             {% if redirect_field_value %}

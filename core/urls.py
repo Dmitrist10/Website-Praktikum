@@ -19,4 +19,6 @@ urlpatterns = [
     path('learn/', learn_index_view, name="learn_index"),
     path('learn/engine/', learn_engine_view, name="learn_engine"),
     path('learn/general/', learn_general_view, name="learn_general"),
+    
+    path('career/', career_view, name="career"),
 ]
